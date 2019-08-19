@@ -1,0 +1,11 @@
+.address {
+    color: purple;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.click {
+    color: purple;
+    text-decoration: underline;
+    cursor: pointer;
+}

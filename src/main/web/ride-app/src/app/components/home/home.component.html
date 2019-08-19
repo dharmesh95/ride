@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br />
+<h1>A better way to give rides and get rides!</h1>
+
+<form action="">
+  <!-- source -->
+  <app-auto-complete [placeholder]="'Source'" [suggestions]="sourceSuggestions"
+    (getSuggestions)="getSuggestions($event)"></app-auto-complete>
+
+  <!-- destination -->
+  <app-auto-complete [placeholder]="'Destination'" [suggestions]="destinationSuggestions"
+    (getSuggestions)="getSuggestions($event)"></app-auto-complete>
+
+  <app-quick-fill-location (fillDestination)="fillDestination($event)"></app-quick-fill-location>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="No. of seats" min="1" name="noOfSeats" [(ngModel)]="noOfSeats">
+  </mat-form-field>
+
+  <button class="button-request-ride" mat-flat-button color="primary" (click)="needRide()">I need a ride</button>
+  <button class="button-give-ride" mat-flat-button color="primary">I can give a ride</button>
+</form>
+
+<!-- below div is just a work around to save latitude and longitude -->
+<div style="visibility: hidden">
+  <span id="latitude"></span>
+  <span id="longitude"></span>
+</div>
